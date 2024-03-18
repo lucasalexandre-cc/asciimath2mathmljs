@@ -311,11 +311,16 @@ class MathML2AsciiMath {
   }
 
   _joinParsedChildren(children: NodeListOf<ChildNode> | ChildNode, delimiter = ' ') {
-    if (children instanceof NodeList) {
+    // @ts-ignore
+    if (children.length) {
+      // @ts-ignore
       return Array.from(children)
         .map((child) => this._parse(child).trim())
         .join(delimiter);
-    } else return [children].map((child) => this._parse(child).trim()).join(delimiter);
+    } else {
+      // @ts-ignore
+      return [children].map((child) => this._parse(child).trim()).join(delimiter);
+    }
   }
 }
 
