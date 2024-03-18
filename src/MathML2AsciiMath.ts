@@ -1,15 +1,19 @@
 import { JSDOM } from 'jsdom';
 import he from 'he';
 
-class MathML2AsciiMath {
+export class MathML2AsciiMath {
   convert(html: string): string {
-    const dom = new JSDOM(html, {
+    const dom = new JSDOM(this._clearHtml(html), {
       contentType: 'application/xml',
     });
 
     const x = dom.window.document.documentElement;
 
     return this._parse(dom.window.document.documentElement).replace(/\s+/g, ' ').trim();
+  }
+
+  _clearHtml(html: string) {
+    return html.replace(/&nbsp;/g, ' ');
   }
 
   _parse(node: ChildNode) {
@@ -323,5 +327,3 @@ class MathML2AsciiMath {
     }
   }
 }
-
-module.exports = { MathML2AsciiMath };
