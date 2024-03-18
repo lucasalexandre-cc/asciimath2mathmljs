@@ -38,6 +38,9 @@ export class MathML2AsciiMath {
     let out = '';
     let sub = '';
     let sup = '';
+    let elem1 = '';
+    let accent = '';
+    let op = '';
 
     switch (node.nodeName) {
       case 'math':
@@ -68,7 +71,7 @@ export class MathML2AsciiMath {
       case 'msup':
         sub = this._parse(node.childNodes[1]);
         sub = sub.length === 1 ? sub : `(${sub})`;
-        let op = this._parse(node.childNodes[0]).replace(/ $/, '');
+        op = this._parse(node.childNodes[0]).replace(/ $/, '');
         return `${op}_${sub}`;
 
       case 'munderover':
@@ -81,8 +84,7 @@ export class MathML2AsciiMath {
         return `${op}_${sub}^${sup}`;
 
       case 'munder':
-        let elem1 = this._parse(node.childNodes[1]).trim();
-        let accent;
+        elem1 = this._parse(node.childNodes[1]).trim();
 
         accent = (() => {
           switch (elem1) {
