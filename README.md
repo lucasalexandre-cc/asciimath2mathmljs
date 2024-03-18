@@ -25,7 +25,8 @@ const { MathML2AsciiMath } = require('mathml2asciimathjs');
 
 // Example conversion
 const mathML = '<math>...</math>';
-const asciiMath = MathML2AsciiMath.convert(mathML);
+const conversor = new MathML2AsciiMath();
+const asciiMath = conversor.convert(mathML);
 
 console.log(asciiMath); // it will print a tranlated asciimath formula
 ```
