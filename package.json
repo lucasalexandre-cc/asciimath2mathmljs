@@ -1,7 +1,7 @@
 {
   "name": "mathml2asciimathjs",
   "version": "1.0.0",
-  "description": "",
+  "description": "Library to convert MathML to AsciiMath",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
