@@ -1,1 +1,1 @@
-export * from "./MathML2AsciiMath";
+export * from './MathML2AsciiMath';
