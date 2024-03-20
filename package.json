@@ -1,12 +1,16 @@
 {
   "name": "mathml2asciimathjs",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Library to convert MathML to AsciiMath",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "rm -rf dist/ && tsc",
     "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lucasalexandre-cc/asciimath2mathmljs"
   },
   "author": "",
   "license": "ISC",
