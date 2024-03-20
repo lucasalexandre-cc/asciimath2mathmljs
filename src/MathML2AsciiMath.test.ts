@@ -63,7 +63,33 @@ describe('MathML2AsciiMath', () => {
         <mo>)</mo>
         <mo>;</mo>
       </math>`,
-        asciimath: '|z + w|_2 = |z|_2 + |w|_2 + 2 r e ( z . overset(-)(w) ) ;',
+        asciimath: '|z + w|^2 = |z|^2 + |w|^2 + 2 r e ( z . overset(-)(w) ) ;',
+      },
+      {
+        mathml: `<math xmlns="http://www.w3.org/1998/Math/MathML">
+        <msub>
+          <mrow>
+            <mi>a</mi>
+          </mrow>
+          <mrow>
+            <mn>1</mn>
+          </mrow>
+        </msub>
+        <mo>=</mo>
+        <mn>3,0</mn>
+        <mi>&#xA0;</mi>
+        <mi>m</mi>
+        <mo>/</mo>
+        <msup>
+          <mrow>
+            <mi>s</mi>
+          </mrow>
+          <mrow>
+            <mn>2</mn>
+          </mrow>
+        </msup>
+      </math>`,
+        asciimath: '(a)_(1) = 3,0 m // s^2',
       },
     ];
 

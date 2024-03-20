@@ -72,6 +72,10 @@ export class MathML2AsciiMath {
         sub = this._parse(node.childNodes[1]);
         sub = sub.length === 1 ? sub : `(${sub})`;
         op = this._parse(node.childNodes[0]).replace(/ $/, '');
+        return `${op}^${sub}`;
+      case 'msub':
+        sub = this._parse(node.childNodes[1]);
+        op = this._parse(node.childNodes[0]).replace(/ $/, '');
         return `${op}_${sub}`;
 
       case 'munderover':
