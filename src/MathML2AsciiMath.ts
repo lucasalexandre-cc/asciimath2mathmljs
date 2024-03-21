@@ -163,6 +163,9 @@ export class MathML2AsciiMath {
       case 'mstyle':
         return this._joinParsedChildren(node.childNodes, '');
 
+      case 'mroot':
+        return `root(${this._parse(node.childNodes[1])})(${this._parse(node.childNodes[0])})`;
+
       default:
         return `Fail`;
     }

@@ -91,6 +91,29 @@ describe('MathML2AsciiMath', () => {
       </math>`,
         asciimath: '(a)_(1) = 3,0 m // s^2',
       },
+      {
+        mathml: `<math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mi>g</mi>
+        <mfenced separators="|">
+          <mrow>
+            <mi>x</mi>
+          </mrow>
+        </mfenced>
+        <mo>=</mo>
+        <mi>&#xA0;</mi>
+        <mroot>
+          <mrow>
+            <mn>1</mn>
+            <mo>+</mo>
+            <mi>x</mi>
+          </mrow>
+          <mrow>
+            <mn>3</mn>
+          </mrow>
+        </mroot>
+      </math>`,
+        asciimath: 'g (x) = root(3)(1 + x)',
+      },
     ];
 
     for (const formula of formulas) {
