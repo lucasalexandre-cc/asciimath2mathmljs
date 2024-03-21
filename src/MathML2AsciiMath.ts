@@ -50,11 +50,7 @@ export class MathML2AsciiMath {
       case 'semantics':
         return this._joinParsedChildren(node.childNodes);
       case 'mrow':
-        out = this._joinParsedChildren(node.childNodes);
-        if (['mfrac', 'msub', 'munder', 'munderover'].includes(node.parentNode.nodeName)) {
-          out = `(${out})`;
-        }
-        return out;
+        return this._joinParsedChildren(node.childNodes);
       case 'mfenced':
         // @ts-ignore
         let symOpen = node.getAttribute('open') || '(';
@@ -165,6 +161,10 @@ export class MathML2AsciiMath {
 
       case 'mroot':
         return `root(${this._parse(node.childNodes[1])})(${this._parse(node.childNodes[0])})`;
+
+      // align items
+      case 'maligngroup':
+        return this._joinParsedChildren(node.childNodes, '');
 
       default:
         return `Fail`;

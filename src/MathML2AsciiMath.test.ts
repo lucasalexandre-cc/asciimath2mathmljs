@@ -89,7 +89,7 @@ describe('MathML2AsciiMath', () => {
           </mrow>
         </msup>
       </math>`,
-        asciimath: '(a)_(1) = 3,0 m // s^2',
+        asciimath: 'a_1 = 3,0 m // s^2',
       },
       {
         mathml: `<math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -113,6 +113,118 @@ describe('MathML2AsciiMath', () => {
         </mroot>
       </math>`,
         asciimath: 'g (x) = root(3)(1 + x)',
+      },
+      {
+        mathml: `<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+        <mrow>
+          <mrow>
+            <munder>
+              <mrow>
+                <mi mathvariant="normal">lim</mi>
+              </mrow>
+              <mrow>
+                <mi>x</mi>
+                <mo>&#x2192;</mo>
+                <mn>2</mn>
+                <mo>&#x207A;</mo>
+              </mrow>
+            </munder>
+          </mrow>
+          <mo>&#x2061;</mo>
+          <mrow>
+            <mfrac>
+              <mrow>
+                <mi>g</mi>
+                <mfenced separators="|">
+                  <mrow>
+                    <mi>x</mi>
+                  </mrow>
+                </mfenced>
+                <mo>-</mo>
+                <mi>g</mi>
+                <mfenced separators="|">
+                  <mrow>
+                    <mn>2</mn>
+                  </mrow>
+                </mfenced>
+              </mrow>
+              <mrow>
+                <mi>x</mi>
+                <mo>-</mo>
+                <mn>2</mn>
+              </mrow>
+            </mfrac>
+          </mrow>
+        </mrow>
+        <mi>&#xA0;</mi>
+        <mi>o</mi>
+        <mi>n</mi>
+        <mi>d</mi>
+        <mi>e</mi>
+        <mi>&#xA0;</mi>
+        <mi>g</mi>
+        <mfenced separators="|">
+          <mrow>
+            <mi>x</mi>
+          </mrow>
+        </mfenced>
+        <mo>=</mo>
+        <mfenced open="{" close="" separators="|">
+          <mrow>
+            <mtable>
+              <mtr>
+                <mtd>
+                  <mrow>
+                    <maligngroup />
+                    <mi>x</mi>
+                    <mi>&#xA0;</mi>
+                    <mi>&#xA0;</mi>
+                    <mi>s</mi>
+                    <mi>e</mi>
+                    <mi>&#xA0;</mi>
+                    <mi>&#xA0;</mi>
+                    <mi>x</mi>
+                    <mo>&#x2265;</mo>
+                    <mn>2</mn>
+                  </mrow>
+                </mtd>
+              </mtr>
+              <mtr>
+                <mtd>
+                  <mrow>
+                    <maligngroup />
+                    <mfrac>
+                      <mrow>
+                        <msup>
+                          <mrow>
+                            <mi>x</mi>
+                          </mrow>
+                          <mrow>
+                            <mn>2</mn>
+                          </mrow>
+                        </msup>
+                      </mrow>
+                      <mrow>
+                        <mn>2</mn>
+                      </mrow>
+                    </mfrac>
+                    <mi>&#xA0;</mi>
+                    <mi>&#xA0;</mi>
+                    <mi>s</mi>
+                    <mi>e</mi>
+                    <mi>&#xA0;</mi>
+                    <mi>&#xA0;</mi>
+                    <mi>x</mi>
+                    <mo>&lt;</mo>
+                    <mn>2</mn>
+                  </mrow>
+                </mtd>
+              </mtr>
+            </mtable>
+          </mrow>
+        </mfenced>
+      </math>`,
+        asciimath: 'underset(x -> 2 ⁺)(lim) (g (x) - g (2))/(x - 2) o n d e g (x) = {[[x s e x >= 2],[(x^2)/(2) s e x < 2]])',
       },
     ];
 
