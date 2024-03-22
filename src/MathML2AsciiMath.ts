@@ -163,6 +163,7 @@ export class MathML2AsciiMath {
         return `root(${this._parse(node.childNodes[1])})(${this._parse(node.childNodes[0])})`;
 
       // align items
+      case 'malignmark':
       case 'maligngroup':
         return this._joinParsedChildren(node.childNodes, '');
 
