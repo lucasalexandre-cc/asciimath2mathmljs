@@ -176,6 +176,7 @@ export class MathML2AsciiMath {
       // align items
       case 'malignmark':
       case 'maligngroup':
+      case 'mphantom':
         return this._joinParsedChildren(node.childNodes, '');
 
       // ignored items

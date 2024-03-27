@@ -339,6 +339,57 @@ describe('MathML2AsciiMath', () => {
       </math>`,
         asciimath: 's e n x 2 = ((1-2 cos( 2x)))/(2)',
       },
+      {
+        mathml: `<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+        <mphantom>
+          <mrow>
+            <mover accent="true">
+              <mrow>
+                <mi>u</mi>
+              </mrow>
+              <mo>&#x2192;</mo>
+            </mover>
+            <mo>&#x22C5;</mo>
+            <mover accent="true">
+              <mrow>
+                <mover accent="true">
+                  <mrow>
+                    <mi>v</mi>
+                  </mrow>
+                  <mo>&#x2192;</mo>
+                </mover>
+              </mrow>
+              <mo>-</mo>
+            </mover>
+          </mrow>
+        </mphantom>
+        <mo>=</mo>
+        <mfenced separators="|">
+          <mrow>
+            <mi>i</mi>
+            <mo>,</mo>
+            <mn>2</mn>
+            <mi>i</mi>
+            <mo>,</mo>
+            <mn>3</mn>
+          </mrow>
+        </mfenced>
+        <mo>&#x22C5;</mo>
+        <mfenced separators="|">
+          <mrow>
+            <mn>4</mn>
+            <mo>,</mo>
+            <mn>2</mn>
+            <mi>i</mi>
+            <mo>,</mo>
+            <mn>1</mn>
+            <mo>-</mo>
+            <mi>i</mi>
+          </mrow>
+        </mfenced>
+      </math>`,
+        asciimath: 'vec u * overset(-)(vec v) = (i , 2 i , 3) * (4 , 2 i , 1 - i)',
+      },
     ];
 
     for (const formula of formulas) {
