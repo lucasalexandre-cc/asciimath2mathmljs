@@ -162,6 +162,17 @@ export class MathML2AsciiMath {
       case 'mroot':
         return `root(${this._parse(node.childNodes[1])})(${this._parse(node.childNodes[0])})`;
 
+      case 'mmultiscripts':
+        // it is not a perfect representation
+        const base = node.childNodes[0];
+        const arrayRepresentation = Array.from(node.childNodes).slice(1);
+        const mprescriptsIndex = arrayRepresentation.findIndex((node) => node.nodeName === 'mprescripts');
+
+        const subArray = arrayRepresentation.slice(0, mprescriptsIndex);
+        const supArray = arrayRepresentation.slice(mprescriptsIndex + 1);
+
+        return `${subArray.length ? this._joinParsedChildren(subArray, '') : ''} ${this._parse(base)} ${supArray.length > 0 ? this._joinParsedChildren(supArray, '') : ''}`;
+
       // align items
       case 'malignmark':
       case 'maligngroup':
@@ -169,10 +180,11 @@ export class MathML2AsciiMath {
 
       // ignored items
       case 'menclose':
+      case 'none':
         return this._joinParsedChildren(node.childNodes, '');
 
       default:
-        return `Fail`;
+        return `Fail(${node.nodeName})`;
     }
   }
 
@@ -328,7 +340,7 @@ export class MathML2AsciiMath {
       .replace(/[\u2028\u2029]/g, ' ');
   }
 
-  _joinParsedChildren(children: NodeListOf<ChildNode> | ChildNode, delimiter = ' ') {
+  _joinParsedChildren(children: NodeListOf<ChildNode> | ChildNode | Array<ChildNode>, delimiter = ' ') {
     // @ts-ignore
     if (children.length) {
       // @ts-ignore

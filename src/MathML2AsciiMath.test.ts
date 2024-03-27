@@ -308,6 +308,37 @@ describe('MathML2AsciiMath', () => {
       </math>`,
         asciimath: 'R_n <= (1)/(10 (2 n + 1)^5) e R_n <= 0,000005 :. (1)/(10 (2 n + 1)^5) <= 0,000005 harr n>=3,1',
       },
+      {
+        mathml: `<math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mi>s</mi>
+        <mi>e</mi>
+        <mi>n</mi>
+        <mmultiscripts>
+          <mrow>
+            <mi>x</mi>
+          </mrow>
+          <mprescripts />
+          <none />
+          <mrow>
+            <mn>2</mn>
+          </mrow>
+        </mmultiscripts>
+        <mo>=</mo>
+        <mi>&#xA0;</mi>
+        <mi>&#xA0;</mi>
+        <mfrac>
+          <mrow>
+            <mtext>(1-2</mtext>
+            <mtext>cos(</mtext>
+            <mtext>2x))</mtext>
+          </mrow>
+          <mrow>
+            <mn>2</mn>
+          </mrow>
+        </mfrac>
+      </math>`,
+        asciimath: 's e n x 2 = ((1-2 cos( 2x)))/(2)',
+      },
     ];
 
     for (const formula of formulas) {
