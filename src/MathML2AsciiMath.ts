@@ -167,6 +167,10 @@ export class MathML2AsciiMath {
       case 'maligngroup':
         return this._joinParsedChildren(node.childNodes, '');
 
+      // ignored items
+      case 'menclose':
+        return this._joinParsedChildren(node.childNodes, '');
+
       default:
         return `Fail`;
     }

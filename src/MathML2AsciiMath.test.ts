@@ -226,6 +226,88 @@ describe('MathML2AsciiMath', () => {
       </math>`,
         asciimath: 'underset(x -> 2 ⁺)(lim) (g (x) - g (2))/(x - 2) o n d e g (x) = {[[x s e x >= 2],[(x^2)/(2) s e x < 2]])',
       },
+      {
+        mathml: `<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+        <msub>
+          <mrow>
+            <mi>R</mi>
+          </mrow>
+          <mrow>
+            <mi>n</mi>
+          </mrow>
+        </msub>
+        <mo>&#x2264;</mo>
+        <mfrac>
+          <mrow>
+            <mn>1</mn>
+          </mrow>
+          <mrow>
+            <mn>10</mn>
+            <msup>
+              <mrow>
+                <mfenced separators="|">
+                  <mrow>
+                    <mn>2</mn>
+                    <mi>n</mi>
+                    <mo>+</mo>
+                    <mn>1</mn>
+                  </mrow>
+                </mfenced>
+              </mrow>
+              <mrow>
+                <mn>5</mn>
+              </mrow>
+            </msup>
+          </mrow>
+        </mfrac>
+        <mi>&#xA0;</mi>
+        <mi>e</mi>
+        <mi>&#xA0;</mi>
+        <msub>
+          <mrow>
+            <mi>R</mi>
+          </mrow>
+          <mrow>
+            <mi>n</mi>
+          </mrow>
+        </msub>
+        <mo>&#x2264;</mo>
+        <mn>0,000005</mn>
+        <mo>&#x2234;</mo>
+        <mfrac>
+          <mrow>
+            <mn>1</mn>
+          </mrow>
+          <mrow>
+            <mn>10</mn>
+            <msup>
+              <mrow>
+                <mfenced separators="|">
+                  <mrow>
+                    <mn>2</mn>
+                    <mi>n</mi>
+                    <mo>+</mo>
+                    <mn>1</mn>
+                  </mrow>
+                </mfenced>
+              </mrow>
+              <mrow>
+                <mn>5</mn>
+              </mrow>
+            </msup>
+          </mrow>
+        </mfrac>
+        <mo>&#x2264;</mo>
+        <mn>0,000005</mn>
+        <mo>&#x2194;</mo>
+        <menclose notation="box">
+          <mi>n</mi>
+          <mo>&#x2265;</mo>
+          <mn>3,1</mn>
+        </menclose>
+      </math>`,
+        asciimath: 'R_n <= (1)/(10 (2 n + 1)^5) e R_n <= 0,000005 :. (1)/(10 (2 n + 1)^5) <= 0,000005 harr n>=3,1',
+      },
     ];
 
     for (const formula of formulas) {
